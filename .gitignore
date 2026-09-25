@@ -1,0 +1,23 @@
+# Gradle / build
+.gradle/
+build/
+/captures
+.externalNativeBuild
+.cxx
+
+# Configuração local (contém o caminho do Android SDK de cada máquina)
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+/.idea/
+.kotlin/
+
+# Segredos: nunca versionar
+.env
+*.jks
+*.keystore
+
+# SO
+.DS_Store
+Thumbs.db

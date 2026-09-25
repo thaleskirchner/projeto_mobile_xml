@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Scripts do Gradle wrapper precisam manter o fim de linha correto em cada SO
+/gradlew        text eol=lf
+*.bat           text eol=crlf
+*.jar           binary

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pt">
+    <string name="app_name">Minha Estante</string>
+
+    <string name="status_want_to_read">Quero ler</string>
+    <string name="status_reading">Lendo</string>
+    <string name="status_read">Lido</string>
+
+    <string name="filter_all">Todos</string>
+    <string name="filter_group_description">Filtrar livros por status de leitura</string>
+    <plurals name="books_total">
+        <item quantity="one">%d livro na estante</item>
+        <item quantity="many">%d livros na estante</item>
+        <item quantity="other">%d livros na estante</item>
+    </plurals>
+    <string name="books_filtered">%1$d de %2$d livros</string>
+    <string name="empty_title">Nada por aqui</string>
+    <string name="empty_message_all">Sua estante ainda está vazia.</string>
+    <string name="empty_message_filtered">Nenhum livro com o status “%1$s”. Abra um livro e altere o status para vê-lo aqui.</string>
+    <string name="status_changed_message">“%1$s” agora está em %2$s</string>
+    <string name="action_undo">Desfazer</string>
+
+    <plurals name="page_count">
+        <item quantity="one">%d página</item>
+        <item quantity="many">%d páginas</item>
+        <item quantity="other">%d páginas</item>
+    </plurals>
+    <string name="rating_short">★ %1$.1f</string>
+    <string name="rating_content_description">Avaliação %1$.1f de 5</string>
+
+    <string name="detail_title">Detalhes do livro</string>
+    <string name="action_back">Voltar</string>
+    <string name="book_not_found">Livro não encontrado.</string>
+    <string name="label_year">Ano</string>
+    <string name="label_pages">Páginas</string>
+    <string name="label_publisher">Editora</string>
+    <string name="label_rating">Avaliação</string>
+    <string name="label_genres">Gêneros</string>
+    <string name="label_synopsis">Sinopse</string>
+    <string name="label_status">Status de leitura</string>
+    <string name="not_informed">Não informado</string>
+    <string name="rating_value">%1$.1f de 5</string>
+    <string name="no_rating">Ainda sem avaliação</string>
+    <string name="no_synopsis">Sinopse não disponível.</string>
+    <string name="status_hint_want_to_read">Este livro está na sua lista de próximas leituras.</string>
+    <string name="status_hint_reading">Leitura em andamento. Bom proveito!</string>
+    <string name="status_hint_read">Leitura concluída. Parabéns!</string>
+</resources>

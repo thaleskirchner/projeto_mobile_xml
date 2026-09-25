@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/space_xl">
+
+    <ImageView
+        android:layout_width="@dimen/empty_state_icon"
+        android:layout_height="@dimen/empty_state_icon"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_book"
+        app:tint="?attr/colorOutline" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_l" />
+
+    <TextView
+        android:id="@+id/emptyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/empty_title"
+        android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_s" />
+
+    <TextView
+        android:id="@+id/emptyMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        tools:text="Nenhum livro com o status “Lendo”." />
+</LinearLayout>

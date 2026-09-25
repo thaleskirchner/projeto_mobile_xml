@@ -1,0 +1,33 @@
+package com.thales.minhaestante.ui.common
+
+import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.doOnAttach
+import androidx.core.view.updatePadding
+
+fun View.applySystemBarsPadding(
+    top: Boolean = false,
+    bottom: Boolean = false,
+    horizontal: Boolean = false,
+) {
+    val initialLeft = paddingLeft
+    val initialTop = paddingTop
+    val initialRight = paddingRight
+    val initialBottom = paddingBottom
+
+    ViewCompat.setOnApplyWindowInsetsListener(this) { view, windowInsets ->
+        val bars = windowInsets.getInsets(
+            WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+        )
+        view.updatePadding(
+            left = initialLeft + if (horizontal) bars.left else 0,
+            top = initialTop + if (top) bars.top else 0,
+            right = initialRight + if (horizontal) bars.right else 0,
+            bottom = initialBottom + if (bottom) bars.bottom else 0,
+        )
+        windowInsets
+    }
+
+    if (isAttachedToWindow) requestApplyInsets() else doOnAttach { it.requestApplyInsets() }
+}

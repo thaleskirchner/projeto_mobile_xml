@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">12dp</dimen>
+    <dimen name="space_l">16dp</dimen>
+    <dimen name="space_xl">24dp</dimen>
+
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="section_spacing">20dp</dimen>
+
+    <dimen name="cover_small_width">56dp</dimen>
+    <dimen name="cover_small_height">80dp</dimen>
+    <dimen name="cover_small_icon">28dp</dimen>
+    <dimen name="cover_large_height">180dp</dimen>
+    <dimen name="cover_large_icon">88dp</dimen>
+    <dimen name="cover_corner_radius">8dp</dimen>
+
+    <dimen name="empty_state_icon">72dp</dimen>
+</resources>
