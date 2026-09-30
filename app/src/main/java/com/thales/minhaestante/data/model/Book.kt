@@ -1,5 +1,7 @@
 package com.thales.minhaestante.data.model
 
+import androidx.annotation.DrawableRes
+
 data class Book(
     val id: String,
     val title: String,
@@ -12,6 +14,7 @@ data class Book(
     val synopsis: String?,
     val rating: Float?,
     val status: ReadingStatus,
+    @param:DrawableRes val coverRes: Int?,
 ) {
     init {
         require(id.isNotBlank()) { "O id do livro não pode ser vazio" }

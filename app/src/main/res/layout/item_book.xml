@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.Material3.CardView.Filled"
     android:layout_width="match_parent"
@@ -22,11 +23,21 @@
             android:background="@drawable/bg_cover">
 
             <ImageView
+                android:id="@+id/coverPlaceholder"
                 android:layout_width="@dimen/cover_small_icon"
                 android:layout_height="@dimen/cover_small_icon"
                 android:layout_gravity="center"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_book" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/coverImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.MinhaEstante.Cover"
+                tools:src="@drawable/cover_dom_casmurro" />
         </FrameLayout>
 
         <Space

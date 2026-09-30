@@ -10,6 +10,7 @@ import com.thales.minhaestante.R
 import com.thales.minhaestante.data.model.Book
 import com.thales.minhaestante.databinding.ItemBookBinding
 import com.thales.minhaestante.ui.common.metaLine
+import com.thales.minhaestante.ui.common.showCover
 import com.thales.minhaestante.ui.common.showStatus
 import com.thales.minhaestante.ui.common.tintAsCover
 
@@ -42,6 +43,7 @@ class BookAdapter(
             val resources = binding.root.resources
 
             binding.cover.tintAsCover(book.id)
+            binding.coverImage.showCover(book.coverRes, placeholder = binding.coverPlaceholder)
             binding.bookTitle.text = book.title
             binding.bookAuthor.text = book.author
 

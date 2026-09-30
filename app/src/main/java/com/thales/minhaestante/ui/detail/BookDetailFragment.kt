@@ -14,6 +14,7 @@ import com.thales.minhaestante.data.model.ReadingStatus
 import com.thales.minhaestante.databinding.FragmentBookDetailBinding
 import com.thales.minhaestante.databinding.ItemGenreChipBinding
 import com.thales.minhaestante.ui.common.applySystemBarsPadding
+import com.thales.minhaestante.ui.common.showCover
 import com.thales.minhaestante.ui.common.tintAsCover
 
 class BookDetailFragment : Fragment() {
@@ -48,6 +49,8 @@ class BookDetailFragment : Fragment() {
 
     private fun bindBook(book: Book) = with(binding) {
         coverContainer.tintAsCover(book.id)
+        coverImage.showCover(book.coverRes, placeholder = coverPlaceholder)
+        coverImage.contentDescription = getString(R.string.cover_content_description, book.title)
         bookTitle.text = book.title
         bookSubtitle.text = book.subtitle
         bookSubtitle.isVisible = !book.subtitle.isNullOrBlank()

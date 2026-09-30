@@ -76,5 +76,6 @@ class BookRepositoryTest {
         synopsis = null,
         rating = null,
         status = status,
+        coverRes = null,
     )
 }

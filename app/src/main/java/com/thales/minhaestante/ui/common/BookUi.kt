@@ -3,9 +3,12 @@ package com.thales.minhaestante.ui.common
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.google.android.material.color.MaterialColors
 import com.thales.minhaestante.R
 import com.thales.minhaestante.data.model.Book
@@ -47,6 +50,12 @@ private val coverColors = intArrayOf(
 fun View.tintAsCover(bookId: String) {
     val colorRes = coverColors[bookId.hashCode().mod(coverColors.size)]
     backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, colorRes))
+}
+
+fun ImageView.showCover(@DrawableRes coverRes: Int?, placeholder: View) {
+    isVisible = coverRes != null
+    placeholder.isVisible = coverRes == null
+    if (coverRes != null) setImageResource(coverRes) else setImageDrawable(null)
 }
 
 fun Book.metaLine(resources: Resources): String? =

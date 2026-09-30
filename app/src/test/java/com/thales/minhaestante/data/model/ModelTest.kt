@@ -30,4 +30,10 @@ class ModelTest {
         val ids = MockBooks.books.map { it.id }
         assertEquals(ids.size, ids.toSet().size)
     }
+
+    @Test
+    fun `mocks possuem capas distintas`() {
+        val covers = MockBooks.books.mapNotNull { it.coverRes }
+        assertEquals(MockBooks.books.size, covers.toSet().size)
+    }
 }

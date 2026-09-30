@@ -83,7 +83,7 @@ do SDK de cada máquina).
 | **AndroidX Activity KTX** | `enableEdgeToEdge()` e a Activity Result API (`registerForActivityResult` e um `ActivityResultContract` próprio). |
 | **AndroidX Fragment KTX** | `Fragment`, `FragmentContainerView`, transações com `commit { }` e Fragment Result API para o Fragment falar com a Activity. |
 | **AndroidX RecyclerView** | Lista de livros com `ListAdapter` e `DiffUtil`, que atualiza só os itens alterados. |
-| **Material Components** | Tema Material 3 claro/escuro, `MaterialToolbar`, `MaterialCardView`, `Chip`/`ChipGroup`, `MaterialButtonToggleGroup` e `Snackbar`. |
+| **Material Components** | Tema Material 3 claro/escuro, `MaterialToolbar`, `MaterialCardView`, `ShapeableImageView` (capas com cantos arredondados), `Chip`/`ChipGroup`, `MaterialButtonToggleGroup` e `Snackbar`. |
 | **JUnit 4** (só testes) | Testes unitários do repositório e dos modelos. |
 
 Ferramentas de build: Android Gradle Plugin 9.0.1, que já compila Kotlin sem o plugin
@@ -122,6 +122,9 @@ app/src/main/res/layout/
 ├── view_info_item.xml               # par "rótulo + valor", incluído 3 vezes
 ├── item_genre_chip.xml              # chip inflado em código para cada gênero
 └── view_reading_status_selector.xml # layout (<merge>) do componente de status
+
+app/src/main/res/drawable-nodpi/
+└── cover_*.jpg                      # capas dos livros (imagens locais)
 ```
 
 ## Requisitos atendidos
@@ -130,11 +133,11 @@ app/src/main/res/layout/
 
 | Requisito | Onde |
 |---|---|
-| Duas telas em Views/XML com Views e ViewGroups adequados | `activity_main.xml` e `item_book.xml` (lista); `activity_book_detail.xml` e `fragment_book_detail.xml` (detalhes). Usam `TextView`, `ImageView`, `Space`, `RatingBar`, `LinearLayout`, `FrameLayout`, `RecyclerView`, `NestedScrollView` e `ChipGroup`. |
+| Duas telas em Views/XML com Views e ViewGroups adequados | `activity_main.xml` e `item_book.xml` (lista); `activity_book_detail.xml` e `fragment_book_detail.xml` (detalhes). Usam `TextView`, `ImageView` (capas dos livros), `Space`, `RatingBar`, `LinearLayout`, `FrameLayout`, `RecyclerView`, `NestedScrollView` e `ChipGroup`. |
 | Navegação por `Intent` explícita, com passagem de dados | `BookDetailActivity.newIntent()` cria `Intent(context, BookDetailActivity::class.java)` com o id do livro. O resultado volta com id, status anterior e status novo (`OpenBookDetailContract`). |
 | Views conectadas ao Kotlin e interação que atualiza a interface | ViewBinding em todas as telas. Os chips de filtro atualizam a lista; o toque no item abre os detalhes; o seletor de status atualiza a dica e o resultado; a Snackbar tem "Desfazer". |
-| Modelos imutáveis (`data class`) e valores opcionais | `Book` só tem `val`, e alterações usam `copy()`. Os campos `subtitle`, `publisher`, `publicationYear`, `pageCount`, `synopsis` e `rating` são anuláveis e tratados com `?.`, `?:`, `listOfNotNull` e `isVisible`. Extras ausentes ou inválidos na Intent também são tratados. |
-| Dados simulados | `MockBooks.kt`. Alguns livros não têm certas informações de propósito. |
+| Modelos imutáveis (`data class`) e valores opcionais | `Book` só tem `val`, e alterações usam `copy()`. Os campos `subtitle`, `publisher`, `publicationYear`, `pageCount`, `synopsis`, `rating` e `coverRes` são anuláveis e tratados com `?.`, `?:`, `listOfNotNull` e `isVisible`. Extras ausentes ou inválidos na Intent também são tratados. |
+| Dados simulados | `MockBooks.kt`, com as capas em `res/drawable-nodpi`. Alguns livros não têm certas informações de propósito. |
 
 ### Opcionais
 
@@ -166,6 +169,17 @@ app/src/main/res/layout/
   são marcados como *headings* e a nota tem descrição falada. Os textos usam `sp`, os alvos
   de toque têm 48dp e o resumo e a dica de status são *live regions*. As cores Material 3
   foram definidas para os temas claro e escuro.
+
+### Capas dos livros
+
+As capas ficam no próprio projeto, em `app/src/main/res/drawable-nodpi/cover_*.jpg`, e cada livro
+aponta para a sua pelo campo `coverRes`. Assim o app funciona sem internet e as imagens sempre
+aparecem. Se um livro não tiver capa (`coverRes = null`), o app mostra um fundo colorido com o
+ícone de livro no lugar.
+
+As imagens foram obtidas do [Open Library Covers](https://openlibrary.org/dev/docs/api/covers),
+correspondem às edições brasileiras listadas nos dados simulados e são usadas apenas para fins
+educacionais. Os direitos das capas pertencem às respectivas editoras.
 
 ### Limitações desta etapa
 

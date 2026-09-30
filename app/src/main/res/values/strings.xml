@@ -31,6 +31,7 @@
     <string name="detail_title">Detalhes do livro</string>
     <string name="action_back">Voltar</string>
     <string name="book_not_found">Livro não encontrado.</string>
+    <string name="cover_content_description">Capa do livro %1$s</string>
     <string name="label_year">Ano</string>
     <string name="label_pages">Páginas</string>
     <string name="label_publisher">Editora</string>

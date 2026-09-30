@@ -1,5 +1,6 @@
 package com.thales.minhaestante.data.mock
 
+import com.thales.minhaestante.R
 import com.thales.minhaestante.data.model.Book
 import com.thales.minhaestante.data.model.ReadingStatus
 
@@ -11,7 +12,7 @@ object MockBooks {
             title = "Dom Casmurro",
             subtitle = null,
             author = "Machado de Assis",
-            publisher = null,
+            publisher = "L&PM",
             publicationYear = 1899,
             pageCount = 256,
             genres = listOf("Romance", "Clássico"),
@@ -19,6 +20,7 @@ object MockBooks {
                 "com Capitu, em uma narrativa marcada pela dúvida e pela memória.",
             rating = 4.5f,
             status = ReadingStatus.READ,
+            coverRes = R.drawable.cover_dom_casmurro,
         ),
         Book(
             id = "2",
@@ -33,6 +35,7 @@ object MockBooks {
                 "acidente de infância e pela luta de sua comunidade pela terra.",
             rating = 5f,
             status = ReadingStatus.READING,
+            coverRes = R.drawable.cover_torto_arado,
         ),
         Book(
             id = "3",
@@ -47,6 +50,7 @@ object MockBooks {
                 "de anões em uma jornada até a montanha guardada por um dragão.",
             rating = null,
             status = ReadingStatus.WANT_TO_READ,
+            coverRes = R.drawable.cover_o_hobbit,
         ),
         Book(
             id = "4",
@@ -61,6 +65,7 @@ object MockBooks {
                 "e de evoluir em equipe.",
             rating = 4f,
             status = ReadingStatus.READING,
+            coverRes = R.drawable.cover_codigo_limpo,
         ),
         Book(
             id = "5",
@@ -75,13 +80,14 @@ object MockBooks {
                 "em capítulos curtos e linguagem seca como a paisagem.",
             rating = 4f,
             status = ReadingStatus.READ,
+            coverRes = R.drawable.cover_vidas_secas,
         ),
         Book(
             id = "6",
             title = "Sapiens",
             subtitle = "Uma Breve História da Humanidade",
             author = "Yuval Noah Harari",
-            publisher = "L&PM",
+            publisher = "Companhia das Letras",
             publicationYear = 2011,
             pageCount = 464,
             genres = listOf("História", "Não ficção"),
@@ -89,6 +95,7 @@ object MockBooks {
                 "revoluções cognitiva e agrícola até a era científica.",
             rating = null,
             status = ReadingStatus.WANT_TO_READ,
+            coverRes = R.drawable.cover_sapiens,
         ),
         Book(
             id = "7",
@@ -102,6 +109,7 @@ object MockBooks {
             synopsis = null,
             rating = null,
             status = ReadingStatus.WANT_TO_READ,
+            coverRes = R.drawable.cover_a_hora_da_estrela,
         ),
         Book(
             id = "8",
@@ -116,6 +124,7 @@ object MockBooks {
                 "para quem desenvolve software.",
             rating = null,
             status = ReadingStatus.WANT_TO_READ,
+            coverRes = R.drawable.cover_o_programador_pragmatico,
         ),
     )
 }
